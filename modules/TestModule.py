@@ -38,8 +38,10 @@ def moduleInit(am, gm, se, sam, lg, rc, errs):
     registerSMSCommand = rc
     #Do not modify above#
     
-    log(moduleName(), "Test init completed")
-    registerSMSCommand("yum", eatPie)
+    SendArdunioMessage() = getLevel()
+    SendArdunioMessage() = flowWater()
+    
+    log(moduleName(), "Water Level init completed")
 
 #Run the module, usually a loop  
 def moduleRun(am, gm, se, sam, lg, rc, errs):
@@ -53,19 +55,26 @@ def moduleRun(am, gm, se, sam, lg, rc, errs):
     registerSMSCommand = rc
     #Do not modify above#
     
+    
+    
     log(moduleName(), "Test run started")
     
     #Add your main loop code below
     while True:
+
+        if getLevel(200) = 0:
+    		log (moduleName(), "Flow")
+        elif
+        	log (moduleName(), "Don't Flow") 
         pass
     
 #Returns the author of the module    
 def moduleAuthor():
-    return "John Smith"
+    return "James Sullivan"
     
 #Returns the name of the module    
 def moduleName():
-    return "TestModule"
+    return "waterLevel"
     
 #Returns the module verison
 def moduleVersion():
@@ -73,7 +82,7 @@ def moduleVersion():
 
 #Returns a descripton of the module    
 def moduleDescription():
-    return "A test module"
+    return "Controls Water Level to ensure correct salinity"
 
 #Called when the module is stopped
 def stopModule(log):
