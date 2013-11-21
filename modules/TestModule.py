@@ -65,6 +65,7 @@ def moduleRun(am, gm, se, sam, lg, rc, errs):
     		sendArdunioMessage(moduleName(),"flowWater")
         elif
         	log (moduleName(), "Don't Flow") 
+        	sendArdunioMessage(moduleName(),"nowatta")
         pass
     
 #Returns the author of the module    
