@@ -38,9 +38,6 @@ def moduleInit(am, gm, se, sam, lg, rc, errs):
     registerSMSCommand = rc
     #Do not modify above#
     
-    SendArdunioMessage() = getLevel()
-    SendArdunioMessage() = flowWater()
-    
     log(moduleName(), "Water Level init completed")
 
 #Run the module, usually a loop  
@@ -57,13 +54,15 @@ def moduleRun(am, gm, se, sam, lg, rc, errs):
     
     
     
-    log(moduleName(), "Test run started")
+    log(moduleName(), "Water Level started")
     
     #Add your main loop code below
     while True:
-
-        if getLevel(200) = 0:
+            sendArdunioMessage(moduleName(),"getLevel")
+            
+        if getLevel = "high":
     		log (moduleName(), "Flow")
+    		sendArdunioMessage(moduleName(),"flowWater")
         elif
         	log (moduleName(), "Don't Flow") 
         pass
